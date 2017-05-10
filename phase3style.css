@@ -36,6 +36,12 @@ input{
   border-style: solid;
 }
 
+.phase3-inputs{
+  width: 19.5%;
+  margin-left: .5%;
+  margin-right: .5%;
+}
+
 button{
   background-color: #929497;
   color: #FFFFFF;

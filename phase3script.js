@@ -55,9 +55,6 @@ resetButton.addEventListener('click', function(){
 });
 
 //toggle buttons
-// The clear button should be disabled if there is nothing to clear.
-// The reset button should be disabled if there is nothing to reset.
-// The Guess Button should be disabled unless there is a valid input
 function toggleGuessButton(){
   if (userInput.value === ''){
     submitGuess.disabled = true;
