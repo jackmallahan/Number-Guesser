@@ -31,7 +31,7 @@ function logicFunction (){
     output.innerText = "Try Guessing a Number...";
   } else if (newInput === randomNumber){
       return userWin();
-    }
+    };
 
 function userWin(){
   var newUserMin = parseInt(userMin.value) - 10;
@@ -53,34 +53,33 @@ function getRandom(min, max) {
 function toggleSubmitButton(){
   if (userMin.value && userMax.value === ''){
     submitButton.disabled = true;
-  } else {submitButton.disabled = false;
-  }
+  } else {submitButton.disabled = false;}
 };
 
 function toggleGuessButton(){
   if (userInput.value === ''){
     guessButton.disabled = true;
   } else {guessButton.disabled = false}
-}
+};
 
 function toggleClearButton(){
   if (userInput.value === ''){
     clearButton.disabled = true;
   } else {clearButton.disabled = false}
-}
+};
 
 function toggleResetButton(){
   if (arrayOfGuesses.length > 0){
     resetButton.disabled = false;
   } else {resetButton.disabled = true};
-}
+};
 
 //User Interaction
 submitButton.addEventListener('click', function(){
   randomNumber = getRandom(parseInt(userMin.value), parseInt(userMax.value));
   toggleSubmitButton();
   console.log(randomNumber)
-})
+});
 
 guessButton.addEventListener('click', function() {
   guessedNumber.innerText = userInput.value;
@@ -108,8 +107,8 @@ userInput.addEventListener('input', function(){
 
 userMax.addEventListener('input', function(){
   toggleSubmitButton();
-})
+});
 
 userMin.addEventListener('input', function(){
   toggleSubmitButton();
-})
+});
