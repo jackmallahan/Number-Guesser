@@ -3,7 +3,7 @@
 <html>
   <head>
       <title>Number Guesser</title>
-      <link href="guesserstyles.css" rel="stylesheet" type="text/css">
+      <link href="phase3style.css" rel="stylesheet" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
   </head>
   <body>
@@ -11,7 +11,14 @@
       <h1> <span class="pink-letters">Number</span><span class="white-letters"</span>Guesser</h1>
     </header>
 
+
     <section>
+      <input class="phase3-inputs" type="number" id="user-min" placeholder="Enter Minimum"/>
+      <input class="phase3-inputs" id="user-max" type="number" placeholder="Enter Maximum"/>
+      <div>
+        <button class="long-buttons" id="submit-button" disabled="true">Submit</button>
+    </section>
+    <section class="earlyPhase">
       <input placeholder="Enter your guess" id="user-input"/>
       <div class="buttons">
         <button class="guess" disabled="true">Guess</button>
@@ -26,9 +33,9 @@
 
       <h5 class="output">What Will Your Guess Be?</h5>
 
-      <button class="reset" disabled="true">Reset</button>
+      <button class="long-buttons" id="reset-button" disabled="true">Reset</button>
     </section>
 
-    <script src="guesserScript2.js"></script>
+    <script src="phase3script.js"></script>
   </body>
 </html>

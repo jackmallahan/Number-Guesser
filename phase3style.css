@@ -30,10 +30,19 @@ input{
   height: 30px;
   text-align: left;
   font-size: 18px;
-  color: #D0D2D3;
+  color: #929497;
   border-width: 1px;
-  border-color: #D0D2D3;
+  border-color: #929497;
   border-style: solid;
+  padding-left: 2px;
+}
+
+.phase3-inputs{
+  width: 19%;
+  margin-left: .5%;
+  margin-right: .5%;
+  margin-bottom: 5px;
+  padding-left: 2px;
 }
 
 button{
@@ -69,7 +78,7 @@ h5{
   margin: 0;
 }
 
-.reset{
+.long-buttons{
   width: 40%;
   font-size: 12px;
 }
