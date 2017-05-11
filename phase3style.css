@@ -30,16 +30,17 @@ input{
   height: 30px;
   text-align: left;
   font-size: 18px;
-  color: #D0D2D3;
+  color: #929497;
   border-width: 1px;
-  border-color: #D0D2D3;
+  border-color: #929497;
   border-style: solid;
 }
 
 .phase3-inputs{
-  width: 19.5%;
+  width: 19%;
   margin-left: .5%;
   margin-right: .5%;
+  margin-bottom: 5px;
 }
 
 button{

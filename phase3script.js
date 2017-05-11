@@ -1,19 +1,24 @@
 //variables
-var randomNumber = getRandom(1, 100);
+var userMin = document.getElementById('user-min')
+var userMax = document.getElementById('user-max')
 var userInput = document.getElementById('user-input');
 var guessedNumber = document.querySelector('.guessed-number');
-var submitGuess = document.querySelector('.guess');
-var titleTaunt = document.querySelector('.title')
-var output = document.querySelector('.output');
+var guessButton = document.querySelector('.guess');
+var submitButton = document.querySelector('.submit-button')
 var clearButton = document.querySelector('.clear');
 var resetButton = document.querySelector('.reset');
+var titleTaunt = document.querySelector('.title')
+var output = document.querySelector('.output');
+var randomNumber = getRandom(min, max);
 var arrayOfGuesses = []
+var min = 1
+var max = 100
 
 //Functions
 function logicFunction (){
   var newInput = parseInt(userInput.value);
-  if (newInput < 1 || newInput > 100){
-    guessedNumber.innerText = "The Range is 1-100. IDIOT!";
+  if (newInput < parseInt(userMin.value) || newInput > parseInt(userMax.value)){
+    guessedNumber.innerText = "The Range is 'userMin'-'userMax'. IDIOT!";
     output.innerText = "I Feel Like I'm Taking Crazy Pills!";
   }else if (newInput > randomNumber){
     output.innerText = "Which is Too High, You Freaking IDIOT";
@@ -27,16 +32,19 @@ function logicFunction (){
   }
 };
 function getRandom(min, max) {
-  min = Math.ceil(min);
-  max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min;
 };
 
+//User Clicks 'Submit'
+submitButton.addEventListener('click', function(){
+  randomNumber = getRandom(parseInt(userMin.value), parseInt(userMax.value));
+  console.log(randomNumber)
+})
+
 //User Clicks 'Guess'
-submitGuess.addEventListener('click', function() {
+guessButton.addEventListener('click', function() {
   guessedNumber.innerText = userInput.value;
   titleTaunt.innerText = "Your Last Guess Was..."
-  console.log(randomNumber);
   logicFunction();
   arrayOfGuesses.push(userInput.value);
   toggleResetButton();
@@ -55,16 +63,16 @@ resetButton.addEventListener('click', function(){
 });
 
 //toggle buttons
-function toggleGuessButton(){
-  if (userInput.value === ''){
-    submitGuess.disabled = true;
-  } else {submitGuess.disabled = false}
-}
-
 userInput.addEventListener('input', function(){
   toggleGuessButton();
   toggleClearButton();
 });
+
+function toggleGuessButton(){
+  if (userInput.value === ''){
+    guessButton.disabled = true;
+  } else {guessButton.disabled = false}
+}
 
 function toggleClearButton(){
   if (userInput.value === ''){
