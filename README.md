@@ -10,8 +10,8 @@ Can you guess the correct number?
 
 1. Enter a minimum number into input box "Enter Minimum" and a maximum number into "Enter Maximum" and click the "Submit" button.
 2. This has now generated a random number between your two parameters. Enter a numerical guess between your two parameters and click the "Guess" button.
-  1. If your guess is too low, guess a number that is higher than your last guess, but still lower than the highest parameter.
-  2. If your guess is too high, guess a number that is lower than your last guess, but still higher than the lowest parameter.
+  * If your guess is too low, guess a number that is higher than your last guess, but still lower than the highest parameter.
+  * If your guess is too high, guess a number that is lower than your last guess, but still higher than the lowest parameter.
 3. Once you guess the number correctly, the game will expand the parameters by 10 on either side and prompt you to continue guessing.
 4. If you want to clear the game and start over, push the "Reset" button.
 
