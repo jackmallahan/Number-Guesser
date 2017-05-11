@@ -34,6 +34,7 @@ input{
   border-width: 1px;
   border-color: #929497;
   border-style: solid;
+  padding-left: 2px;
 }
 
 .phase3-inputs{
@@ -41,6 +42,7 @@ input{
   margin-left: .5%;
   margin-right: .5%;
   margin-bottom: 5px;
+  padding-left: 2px;
 }
 
 button{
