@@ -1,6 +1,4 @@
 //variables
-var userMin = document.getElementById('user-min')
-var userMax = document.getElementById('user-max')
 var userInput = document.getElementById('user-input');
 var guessedNumber = document.querySelector('.guessed-number');
 var guessButton = document.querySelector('.guess');
@@ -9,7 +7,7 @@ var clearButton = document.querySelector('.clear');
 var resetButton = document.getElementById('reset-button');
 var titleTaunt = document.querySelector('.title')
 var output = document.querySelector('.output');
-var randomNumber = getRandom(parseInt(userMin.value), parseInt(userMax.value));
+var randomNumber = getRandom(parseInt($('.user-min').val(), parseInt($('.user-max').val())));
 var arrayOfGuesses = []
 var min = 1
 var max = 100
@@ -18,9 +16,9 @@ var max = 100
 //Functions
 function logicFunction (){
   var newInput = parseInt(userInput.value);
-  if (newInput < parseInt(userMin.value) || newInput > parseInt(userMax.value)){
+  if (newInput < parseInt($('.user-min').val()) || newInput > parseInt($('.user-max').val())){
     titleTaunt.innerText = "You set the range. You can't make a guess inside it?";
-    guessedNumber.innerText = "Guess a number between " + userMin.value + " and " + userMax.value;
+    guessedNumber.innerText = "Guess a number between " + $('.user-min').val() + " and " + $('.user-max').val();
     output.innerText = "I Feel Like I'm Taking Crazy Pills!";
   }else if (newInput > randomNumber){
     output.innerText = "Which is Too High, You Freaking IDIOT";
@@ -34,11 +32,11 @@ function logicFunction (){
     };
 
 function userWin(){
-  var newUserMin = parseInt(userMin.value) - 10;
-  var newUserMax = parseInt(userMax.value) + 10;
+  var newUserMin = parseInt($('.user-min').val()) - 10;
+  var newUserMax = parseInt($('.user-max')) + 10;
   var newRandom = getRandom(newUserMin, newUserMax);
-  userMin.value = newUserMin;
-  userMax.value = newUserMax;
+  $('.user-min').val() = newUserMin;
+  $('.user-max').val() = newUserMax;
     output.innerText = "Congrats. You Beat Me. I think its a fluke. Guess again between " + newUserMin + " and " + newUserMax;
     console.log(newUserMin, newUserMax);
     console.log(newRandom);
@@ -51,9 +49,9 @@ function getRandom(min, max) {
 };
 
 function toggleSubmitButton(){
-  if (userMin.value && userMax.value === ''){
+  if ($('.user-min').val() && $('.user-max').val() === ''){
     submitButton.disabled = true;
-  } else {submitButton.disabled = false;}
+  } else {submitButton.disabled = false}
 };
 
 function toggleGuessButton(){
@@ -76,7 +74,7 @@ function toggleResetButton(){
 
 //User Interaction
 submitButton.addEventListener('click', function(){
-  randomNumber = getRandom(parseInt(userMin.value), parseInt(userMax.value));
+  randomNumber = getRandom(parseInt($('.user-min').val()), parseInt($('.user-max').val()));
   toggleSubmitButton();
   console.log(randomNumber)
 });
@@ -105,10 +103,10 @@ userInput.addEventListener('input', function(){
   toggleClearButton();
 });
 
-userMax.addEventListener('input', function(){
+$('.user-max').on('input', function(){
   toggleSubmitButton();
 });
 
-userMin.addEventListener('input', function(){
+$('.user-min').on('input', function(){
   toggleSubmitButton();
 });
