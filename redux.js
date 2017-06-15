@@ -1,21 +1,22 @@
-//variables
-var userInput = document.getElementById('user-input');
-var guessedNumber = document.querySelector('.guessed-number');
-var guessButton = document.querySelector('.guess');
-var submitButton = document.getElementById('submit-button')
-var clearButton = document.querySelector('.clear');
-var resetButton = document.getElementById('reset-button');
-var titleTaunt = document.querySelector('.title')
-var output = document.querySelector('.output');
-var randomNumber = getRandom(parseInt($('.user-min').val(), parseInt($('.user-max').val())));
-var arrayOfGuesses = []
-var min = 1
-var max = 100
+//letiables
+let userInput = document.getElementById('user-input');
+let guessedNumber = document.querySelector('.guessed-number');
+let guessButton = document.querySelector('.guess');
+let submitButton = document.getElementById('submit-button')
+let clearButton = document.querySelector('.clear');
+let resetButton = document.getElementById('reset-button');
+let titleTaunt = document.querySelector('.title')
+let output = document.querySelector('.output');
+let randomNumber = getRandom(parseInt($('.user-min').val(), parseInt($('.user-max').val())));
+let arrayOfGuesses = []
+let min = 1
+let max = 100
+
 
 
 //Functions
 function logicFunction (){
-  var newInput = parseInt(userInput.value);
+  let newInput = parseInt(userInput.value);
   if (newInput < parseInt($('.user-min').val()) || newInput > parseInt($('.user-max').val())){
     titleTaunt.innerText = "You set the range. You can't make a guess inside it?";
     guessedNumber.innerText = "Guess a number between " + $('.user-min').val() + " and " + $('.user-max').val();
@@ -32,9 +33,9 @@ function logicFunction (){
     };
 
 function userWin(){
-  var newUserMin = parseInt($('.user-min').val()) - 10;
-  var newUserMax = parseInt($('.user-max')) + 10;
-  var newRandom = getRandom(newUserMin, newUserMax);
+  let newUserMin = parseInt($('.user-min').val()) - 10;
+  let newUserMax = parseInt($('.user-max')) + 10;
+  let newRandom = getRandom(newUserMin, newUserMax);
   $('.user-min').val() = newUserMin;
   $('.user-max').val() = newUserMax;
     output.innerText = "Congrats. You Beat Me. I think its a fluke. Guess again between " + newUserMin + " and " + newUserMax;
@@ -49,7 +50,7 @@ function getRandom(min, max) {
 };
 
 function toggleSubmitButton(){
-  if ($('.user-min').val() && $('.user-max').val() === ''){
+  if ($('.user-min').val() || $('.user-max').val() === ''){
     submitButton.disabled = true;
   } else {submitButton.disabled = false}
 };
