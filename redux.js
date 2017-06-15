@@ -13,6 +13,7 @@ let min = 1
 let max = 100
 
 
+
 //Functions
 function logicFunction (){
   let newInput = parseInt(userInput.value);
